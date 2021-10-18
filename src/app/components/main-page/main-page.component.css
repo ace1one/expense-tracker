@@ -1,0 +1,59 @@
+mat-grid-tile {
+    background: lightblue;
+  }
+
+.container{
+    padding: 20px;
+}
+
+mat-card{
+   margin-right: 10px;
+   width: 45%;
+   height: 100%;
+}
+
+.main-cards{
+    display: flex;
+    padding: 10px;
+}
+
+.list-card{
+    padding: 10px;
+}
+
+.list-card mat-card{
+    width: 94%;
+    border-left: 5px solid red;
+}
+
+.side-cards{
+    padding: 10px;
+}
+
+.side-cards mat-card{
+    width: 93%;
+}
+
+.side-cards mat-form-field{
+    width: 100%;
+}
+
+.cards{
+    flex-direction: row;
+    padding: 5px;
+}
+
+
+.main-contain{
+    width:60%;
+    background-color: lightblue;
+}
+
+.side-contain{
+    width:40%;
+    background-color:lightblue;
+}
+
+.inner-contain{
+    display: flex;
+}

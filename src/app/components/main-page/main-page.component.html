@@ -1,0 +1,41 @@
+<div class="container">
+<div class="inner-contain">
+    <div class="main-contain">
+        <div class="main-cards">
+            <mat-card>Balance</mat-card>
+            <mat-card>Income</mat-card>
+            <mat-card>Expenses</mat-card>
+        </div>
+        <div class="list-card" *ngFor="let item of allExpensesData">
+            <mat-card>{{item.title}}</mat-card>
+        </div>
+    </div>
+    <div class="side-contain">
+        <div class="side-cards">
+            <mat-card>
+              <form [formGroup]="formValue" (ngSubmit)="addExpenses()">
+                <mat-form-field  appearance="outline">
+                  <mat-label>Remarks</mat-label>
+                  <input matInput formControlName="title" autocomplete="off" placeholder="Remarks">
+                </mat-form-field>
+                <mat-form-field  appearance="outline">
+                  <mat-label>Amount</mat-label>
+                  <input matInput formControlName="amount" type="number" autocomplete="off" placeholder="Rs.">
+                </mat-form-field>
+                <mat-form-field  appearance="outline">
+                  <mat-label>Select any</mat-label>
+                  <mat-select formControlName="options">
+                    <mat-option value="Income">Income</mat-option>
+                    <mat-option value="Expense">Expense</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <button mat-flat-button color="primary">Primary</button>
+              </form>
+                
+            </mat-card>
+            
+        </div>
+    </div>
+</div>
+</div>
+

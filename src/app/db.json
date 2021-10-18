@@ -1,0 +1,22 @@
+{
+  "expenses": [
+    {
+      "title": "",
+      "options": "Income",
+      "amount": 150000,
+      "id": 1
+    },
+    {
+      "title": "",
+      "options": "Expense",
+      "amount": 145258,
+      "id": 2
+    },
+    {
+      "title": "dsfrsdfs",
+      "options": "Expense",
+      "amount": 572572,
+      "id": 3
+    }
+  ]
+}
