@@ -6,9 +6,25 @@
             <mat-card>Income</mat-card>
             <mat-card>Expenses</mat-card>
         </div>
-        <div class="list-card" *ngFor="let item of allExpensesData">
-            <mat-card>{{item.title}}</mat-card>
+     
+          <div Class="list-card" *ngFor="let item of allExpensesData">
+          
+            <mat-card [ngClass]="item.options=='Expense'? 'list-card-red': 'list-card-green'"> 
+              <span> &nbsp; {{item.title}}</span> 
+              <div class="right-side-amt">
+                <h3 class="mat-subheading-2"> Rs.  {{item.amount}} /- &nbsp;</h3> 
+              </div>
+
+              <h6 class="right-side-date">
+                &nbsp;  {{ item.datetime | date:'mediumDate' }} 
+              </h6>
+              
+            </mat-card>
+            
         </div>
+     
+
+       
     </div>
     <div class="side-contain">
         <div class="side-cards">
@@ -29,7 +45,16 @@
                     <mat-option value="Expense">Expense</mat-option>
                   </mat-select>
                 </mat-form-field>
-                <button mat-flat-button color="primary">Primary</button>
+                <button (click)="clearForm()" class="clear-button" mat-raised-button color="warn">
+                  <mat-icon>clear</mat-icon>
+                  Clear
+                </button>
+                  <button  class="add-button" mat-raised-button color="primary">
+                    <mat-icon>add</mat-icon>
+                    Save
+                  </button>
+                 
+              
               </form>
                 
             </mat-card>

@@ -21,9 +21,28 @@ mat-card{
     padding: 10px;
 }
 
-.list-card mat-card{
+.list-card-red{
     width: 94%;
-    border-left: 5px solid red;
+    border-left: 5px solid #f44336;
+    color:#f44336;
+}
+
+.list-card-green{
+    width: 94%;
+    border-left: 5px solid green;
+    color:green;
+}
+
+
+.right-side-amt{
+   float: right;
+   margin-top: 10px;
+}
+
+.list-card mat-card{
+    padding: 5px;
+    width: 97%;
+    
 }
 
 .side-cards{
@@ -56,4 +75,16 @@ mat-card{
 
 .inner-contain{
     display: flex;
+}
+
+
+.add-button{
+    width: 49.5%;
+   
+
+}
+
+.clear-button{
+    width: 49.5%;
+    margin-right: 1.5px;
 }

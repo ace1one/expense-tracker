@@ -3,5 +3,5 @@ export class Expenses {
     title:string="";
     options:string="";
     amount:string="";
-
+    datetime:Date=new Date()
 }

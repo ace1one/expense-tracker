@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder,FormGroup, Validators} from '@angular/forms'
+import { Component, OnInit,ViewChild } from '@angular/core';
+import { AbstractControl, FormBuilder,FormGroup, Validators,FormGroupDirective} from '@angular/forms'
 import { Expenses } from 'src/app/model/expenses';
 import { ExpensesService } from 'src/app/services/expenses.service';
 
@@ -10,26 +10,44 @@ import { ExpensesService } from 'src/app/services/expenses.service';
 })
 export class MainPageComponent implements OnInit {
 formValue !: FormGroup
+@ViewChild(FormGroupDirective) formGroupDirective!: FormGroupDirective;
+
 allExpensesData:any
+ date: Date = new Date();  
 expensesData: Expenses = new Expenses()
   constructor(private api:ExpensesService,private formbuilder: FormBuilder) {
         this.formValue =   this.formbuilder.group({
-          title:[''],
-          options:[''],
-          amount:['']
+          title:['',Validators.required],
+          options:['',Validators.required],
+          amount:['',Validators.required],
+          datetime:[this.date]
+         
         })
+      
    }
 
   ngOnInit(): void {
     this.getExpenses()
+    
+    
   }
  
   addExpenses(){
-    this.expensesData = this.formValue.value
-    this.api.createExpenses(this.expensesData)
-    .subscribe(res=>{
-      console.log("posted")
-    })
+    
+    if (this.formValue.valid){
+      this.expensesData = this.formValue.value
+      this.api.createExpenses(this.expensesData)
+      .subscribe(res=>{
+        this.getExpenses()
+      })
+      
+      this.formValue.markAsPristine()
+      this.formValue.markAsUntouched()
+      this.formValue.reset()
+    }
+    }
+    clearForm(){
+      this.formValue.markAsUntouched()
   }
 
   getExpenses(){

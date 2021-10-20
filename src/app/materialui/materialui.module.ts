@@ -21,6 +21,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatCardModule } from '@angular/material/card';
 import { MatSortModule} from '@angular/material/sort';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+
 
 
 
@@ -52,6 +54,8 @@ import { MatSortModule} from '@angular/material/sort';
     MatPaginatorModule,
     MatCardModule,
     MatSortModule,
+    MatDatepickerModule,
+    MatButtonToggleModule
     
   ],
   
@@ -74,6 +78,8 @@ import { MatSortModule} from '@angular/material/sort';
     MatPaginatorModule,
     MatCardModule,
     MatSortModule,
+    MatDatepickerModule,
+    MatButtonToggleModule
  ],
 })
 export class MaterialuiModule { }
